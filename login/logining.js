@@ -35,7 +35,7 @@ auth.addEventListener('submit', function(event) {
 
     if(users.login == formData.login && users.password == formData.password) //Проверяем данные из формы с данными из localStorage
     {
-        window.location.href = '../lobby/index.html';
+        window.location.href = '../index.html';
         localStorage.setItem("uslog", users.login);
     }
     else //В случае несоотвествия данных из формы с данными из localStorage
@@ -45,7 +45,7 @@ auth.addEventListener('submit', function(event) {
         .then(user => {
             for(let i = 0; i < user.length; i++){
             if(formData.login == user[i].login && formData.password == user[i].password) {
-                window.location.href = '../lobby/index.html';
+                window.location.href = '../index.html';
                 localStorage.setItem("uslog", user[i].login);
                 return;
             }
